@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ROOT */
+:root, //default
+:root[data-color-scheme="light"] { //change theme
+  --default-font: Montserrat;
+  --font-size: 18px;
+  --foreground-rgb: #3c3c3c;
+  --foreground-rgb_second: #666;
+  --background-rgb: #fff;
+  --background-rgb_footer: #f1f1f1;
+  --accent: #9b2b2e;
+  --margin-nav: 125px;
+}
+
+@media (prefers-color-scheme: dark) { //system theme dark
+  :root, {
+    --foreground-rgb: #f1f1f1;
+    --background-rgb: #1c1c1c;
+    --background-rgb_footer: #2e2e2e;
+    --foreground-rgb_second: #ccc;
+  }
+}
+
+:root[data-color-scheme="dark"], { //change theme
+  --foreground-rgb: #f1f1f1;
+  --background-rgb: #1c1c1c;
+  --background-rgb_footer: #2e2e2e;
+  --foreground-rgb_second: #ccc;
+}
+
+/* FONT */
+@font-face {
+  font-family: Montserrat;
+  src: url("../font/Montserrat-Regular.woff2");
+  font-weight: normal
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../font/Montserrat-Bold.woff2");
+  font-weight: bold
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../font/Montserrat-BoldItalic.woff2");
+  font-weight: bold;
+  font-style: italic
+}
+
+/* SETTINGS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--default-font), sans-serif;
+  font-size: var(--font-size);
+  color: var(--foreground-rgb);
+  background: var(--background-rgb);
+}
+
+::selection {
+  background: var(--accent); /* Цвет фона */
+  color: #fff; /* Цвет текста */
+}
+
+/* NAVIGATION */
+.margin-nav {
+  height: var(--margin-nav);
+}
+
+#header-wrapper {
+  .header-margin-top {
+    height: var(--margin-nav);
+  }
+
+  .header {
+    z-index: 99;
+    position: fixed;
+    padding: 30px 0;
+    width: 100%;
+    background: var(--background-rgb);
+  }
+
+  .navbar {
+    display: flex;
+  }
+
+  .navbar a {
+    margin: 0 20px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .navbar a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--foreground-rgb);
+    transition: width 0.5s;
+  }
+
+  .navbar a:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: var(--accent);
+    color: var(--foreground-rgb);
+    transition: width 0.5s;
+  }
+
+  .navbar a:last-child {
+    margin-right: 0;
+  }
+
+  .navbar a:first-child {
+    margin-left: 0;
+  }
+
+  .header-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo, .header-search {
+    width: 100px;
+    height: auto;
+  }
+
+  .mega-menu {
+    position: absolute;
+    top: 125px;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    background: var(--background-rgb);
+    animation: .5s show;
+
+    .content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: 1s fade ease-in;
+    }
+  }
+
+  @keyframes show {
+    from {
+      height: 0;
+    }
+    to {
+      height: 500px;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 72px;
+  font-style: italic;
+}
+
+/* Swiper home */
+.home-slider {
+  height: calc(100vh - var(--margin-nav));
+  color: #fff;
+  cursor: pointer;
+
+  .slide {
+    height: 100%;
+  }
+
+  .slide-body {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .slide-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  .info {
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
+.btn-accent {
+  padding: 20px 40px;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  background: var(--accent);
+  color: #f1f1f1;
+  transition: opacity ease-in .1s;
+
+  &:hover {
+    opacity: .9;
+  }
+}
