@@ -29,7 +29,7 @@ export const Slider =  ({posters}: Props):JSX.Element => {
       {posters.map((poster: Poster) => (
         <SwiperSlide className={'swiper-slide'} key={poster.id}>
           <div className={'slide'}
-               style={{background: `url(/img/posters/${poster.photo}) top no-repeat`, backgroundSize: "cover"}}>
+               style={{background: `url(${process.env.HOST_NAME}/img/posters/${poster.photo}) top no-repeat`, backgroundSize: "cover"}}>
             <div className={'slide-wrapper'}>
               <div className={'container mx-auto slide-body'}>
                 <div className={'info'}>

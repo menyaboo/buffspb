@@ -32,7 +32,7 @@ export const OnePoster = ({poster, scenes}: Props):JSX.Element => {
         <span className={'time'}>{getTime(poster.date, scenes[--poster.sceneId].name)}</span>
       </div>
       <div className={'poster-info'}>
-        <Link href={'/'} style={{backgroundImage: `url(/img/posters/${poster.photo})`}} className={'poster-img'}></Link>
+        <Link href={'/'} style={{backgroundImage: `url(${process.env.HOST_NAME}/img/posters/${poster.photo})`}} className={'poster-img'}></Link>
         <div className={'info'}>
           <div className={'info-description'}>
             <Link href={'/'}><h1 className={'title-second'}>{poster.title}</h1></Link>

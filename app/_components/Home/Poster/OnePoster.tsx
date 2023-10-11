@@ -27,7 +27,7 @@ export const OnePoster = ({poster, scenes}: Props):JSX.Element => {
     <div  className={`poster-card xl`}>
       <div className={'poster-card_wrapper'}>
         <div className={'poster-img'}
-             style={{background: `url(/img/posters/${poster.photo}) center center no-repeat`}}>
+             style={{background: `url(${process.env.HOST_NAME}/img/posters/${poster.photo}) center center no-repeat`}}>
         </div>
         <div className={'poster-info'}>
           <div className={'poster-info_date'}>
