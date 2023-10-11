@@ -3,10 +3,11 @@ import Image from "next/image";
 import Logo from "@/public/img/buff-logo.png";
 import Link from "next/link";
 import {useState} from "react";
-import {NavLinks} from "@/app/_types/navLinks";
+import {NavLink} from "@/app/_types/navLink";
+import {MdOutlineKeyboardArrowDown} from "react-icons/md";
 
 type Props = {
-  navLinks: Array<NavLinks>
+  navLinks: Array<NavLink>
 }
 
 export const Navbar = ({navLinks}: Props): JSX.Element => {
@@ -18,14 +19,18 @@ export const Navbar = ({navLinks}: Props): JSX.Element => {
     <header className={'header'} onMouseLeave={mouseLeave}>
       <div className={'container mx-auto header-body'}>
         <div className={'logo'}>
-          <Image alt={"logo"} src={Logo}/>
+          <Link href={'/'}><Image alt={"logo"} src={Logo}/></Link>
         </div>
-        <nav className={'navbar'}>
-          {navLinks.map((link: NavLinks) => (
+        <nav className={'navbar links'}>
+          {navLinks.map((link: NavLink) => (
             <Link
+              className={'flex items-center'}
               key={link.id}
               onMouseEnter={link.canActiveMenu ? mouseEnter : mouseLeave}
-              href={link.href}>{link.name}</Link>
+              href={link.href}>
+              {link.name}
+              {link.canActiveMenu ? <MdOutlineKeyboardArrowDown className={'ml-2'}/> : null}
+            </Link>
           ))}
         </nav>
         <div className={'header-search'}>

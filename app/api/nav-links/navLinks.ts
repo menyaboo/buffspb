@@ -1,9 +1,11 @@
-export const navLinks = [
+import {NavLink} from "@/app/_types/navLink";
+
+export const navLinks: Array<NavLink> = [
   {
     id: 1,
     name: "Афиша",
-    href: "/",
-    canActiveMenu: true,
+    href: "/afisha",
+    canActiveMenu: false,
   },
   {
     id: 2,

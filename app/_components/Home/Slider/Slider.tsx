@@ -3,11 +3,11 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import {Scrollbar, Autoplay} from 'swiper/modules';
-import {Posters} from "@/app/_types/posters";
+import {Poster} from "@/app/_types/poster";
 import Link from "next/link";
 
 type Props = {
-  posters: Array<Posters>
+  posters: Array<Poster>
 }
 
 export const Slider =  ({posters}: Props):JSX.Element => {
@@ -26,7 +26,7 @@ export const Slider =  ({posters}: Props):JSX.Element => {
       }}
       speed={800}
     >
-      {posters.map((poster: Posters) => (
+      {posters.map((poster: Poster) => (
         <SwiperSlide className={'swiper-slide'} key={poster.id}>
           <div className={'slide'}
                style={{background: `url(/img/posters/${poster.photo}) top no-repeat`, backgroundSize: "cover"}}>
@@ -34,7 +34,7 @@ export const Slider =  ({posters}: Props):JSX.Element => {
               <div className={'container mx-auto slide-body'}>
                 <div className={'info'}>
                   <h1 className={'title'}>{poster.title}</h1>
-                  <p>{poster.author}</p>
+                  <p className={'author'}>{poster.author}</p>
                 </div>
                 <Link href={'#'} className={'btn-accent'}>Купить билет</Link>
               </div>
