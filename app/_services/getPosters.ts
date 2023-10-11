@@ -1,9 +1,5 @@
 export const getAllPosters = async () => {
-  const response = await fetch("http://localhost:3000/api/posters", {
-    next: {
-      revalidate: 10
-    }
-  })
-
+  const response = await fetch("https://menyaboo.github.io/buffspb/api/posters")
+  if (!response.ok) throw new Error('Unable to fetch posters')
   return response.json();
 }

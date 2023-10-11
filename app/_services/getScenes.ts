@@ -1,9 +1,5 @@
 export const getAllScenes = async () => {
-  const response = await fetch("http://localhost:3000/api/scenes", {
-    next: {
-      revalidate: 10
-    }
-  })
-
+  const response = await fetch("https://menyaboo.github.io/buffspb/api/scenes")
+  if (!response.ok) throw new Error('Unable to fetch scenes')
   return response.json();
 }
