@@ -8,7 +8,11 @@ import {Filter} from "@/app/_components/Afisha/Filter";
 export default function Afisha(): JSX.Element {
   return (
     <main>
-
+      <TheHeader/>
+      <Calendar/>
+      <Posters/>
+      <TheFooter/>
+      <TheInfo/>
     </main>
   )
 }

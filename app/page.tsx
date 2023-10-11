@@ -8,7 +8,12 @@ import {TheInfo} from "@/app/_components/TheInfo";
 export default function Home(): JSX.Element {
   return (
     <main>
-
+      <TheHeader/>
+      <HomeSlider/>
+      <HomePoster/>
+      <HomeNews/>
+      <TheFooter/>
+      <TheInfo/>
     </main>
   )
 }
