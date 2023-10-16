@@ -12,7 +12,7 @@ interface Params {
   }
 }
 
-export default async function Page({params: {id}}: Params):Promise<JSX.Element> {
+export default async function PageAfisha({params: {id}}: Params):Promise<JSX.Element> {
   const poster: Poster = await getOnePoster(+id)
   const scenes: Array<Scene> = await getAllScenes()
 
