@@ -8,8 +8,6 @@ export const getAllPosters = async () => {
 
 export const getOnePoster = async (id: number) => {
   const response = await fetch(process.env.HOST_NAME + `/api/posters/${id}`)
-  if (!response.ok) {
-    notFound()
-  }
+  if (!response.ok) notFound()
   return response.json();
 }

@@ -4,7 +4,6 @@ import {TheHeader} from "@/app/_components/TheNavbar/TheHeader";
 import {TheFooter} from "@/app/_components/TheFooter";
 import {OneNews} from "@/app/_components/News/[id]/OneNews";
 
-
 interface Params {
   params: {
     id: string
