@@ -1,10 +1,10 @@
 import Link from "next/link";
 import {Poster} from "@/app/_types/poster";
 import {Scene} from "@/app/_types/scene";
-import {Slider} from "@/app/_components/Afisha/OnePoster/Slider";
-import {DescriptionCard} from "@/app/_components/Afisha/OnePoster/DescriptionCard";
-import {WorkCard} from "@/app/_components/Afisha/OnePoster/WorkCard";
-import {ArtistCard} from "@/app/_components/Afisha/OnePoster/ArtistCard";
+import {Slider} from "@/app/_components/Afisha/[id]/Slider";
+import {DescriptionCard} from "@/app/_components/Afisha/[id]/DescriptionCard";
+import {WorkCard} from "@/app/_components/Afisha/[id]/WorkCard";
+import {ArtistCard} from "@/app/_components/Afisha/[id]/ArtistCard";
 
 function getDate(date: Date): string | undefined {
   const data = new Date(date)

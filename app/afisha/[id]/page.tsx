@@ -2,7 +2,7 @@ import {Poster} from "@/app/_types/poster";
 import {getOnePoster} from "@/app/_services/getPosters";
 import {TheHeader} from "@/app/_components/TheNavbar/TheHeader";
 import {TheFooter} from "@/app/_components/TheFooter";
-import {OnePoster} from "@/app/_components/Afisha/OnePoster/OnePoster";
+import {OnePoster} from "@/app/_components/Afisha/[id]/OnePoster";
 import {Scene} from "@/app/_types/scene";
 import {getAllScenes} from "@/app/_services/getScenes";
 
