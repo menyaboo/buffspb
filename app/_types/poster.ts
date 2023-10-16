@@ -8,4 +8,5 @@ export interface Poster {
   price: number,
   sceneId: number,
   isPushkinCard: boolean;
+  name?: string;
 }

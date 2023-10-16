@@ -2,6 +2,7 @@ import vk from '@/public/img/icon/vk.svg'
 import telegram from '@/public/img/icon/telegram.svg'
 import twitter from '@/public/img/icon/twitter.svg'
 import {FaArrowRightLong} from "react-icons/fa6";
+import Image from "next/image";
 
 export const TheFooter = () => {
   return (
@@ -25,9 +26,9 @@ export const TheFooter = () => {
             <div className={'social'}>
               <h1>Социальные сети</h1>
               <div className={'icon'}>
-                <a href={'/'}><img alt={'vk'} src={vk.src}/></a>
-                <a href={'/'}><img alt={'telegram'} src={telegram.src}/></a>
-                <a href={'/'}><img alt={'twitter'} src={twitter.src}/></a>
+                <a href={'/'}><Image width={50} height={50} alt={'vk'} src={vk.src}/></a>
+                <a href={'/'}><Image width={50} height={50} alt={'telegram'} src={telegram.src}/></a>
+                <a href={'/'}><Image width={50} height={50} alt={'twitter'} src={twitter.src}/></a>
               </div>
             </div>
           </div>

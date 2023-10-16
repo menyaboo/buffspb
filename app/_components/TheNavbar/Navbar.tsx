@@ -5,14 +5,39 @@ import Link from "next/link";
 import {useState} from "react";
 import {NavLink} from "@/app/_types/navLink";
 import {MdOutlineKeyboardArrowDown} from "react-icons/md";
+import {News} from "@/app/_types/news";
+import {MegaMenu} from "@/app/_components/TheNavbar/MegaMenu";
 
 type Props = {
   navLinks: Array<NavLink>
+  news: Array<News>
+  posters: Array<News>
 }
 
-export const Navbar = ({navLinks}: Props): JSX.Element => {
+export const Navbar = ({navLinks, news, posters}: Props): JSX.Element => {
   const [isHover, setIsHover] = useState(false);
-  const mouseEnter = () => setIsHover(true)
+  const [infoMegaMenu, setInfoMegaMenu] = useState(news)
+  const [href, setHref] = useState('')
+  const mouseEnter = (link: NavLink) => {
+    if (!link.menu)
+      return mouseLeave()
+
+    switch(link.menu) {
+      case 'news':
+        setInfoMegaMenu(news)
+        setHref('news')
+        break
+      case 'posters':
+        setInfoMegaMenu(posters)
+        setHref('afisha')
+        break
+      default:
+        mouseLeave()
+        break
+    }
+
+    setIsHover(true)
+  }
   const mouseLeave = () => setIsHover(false)
 
   return (
@@ -26,20 +51,18 @@ export const Navbar = ({navLinks}: Props): JSX.Element => {
             <Link
               className={'flex items-center'}
               key={link.id}
-              onMouseEnter={link.canActiveMenu ? mouseEnter : mouseLeave}
+              onMouseEnter={() => mouseEnter(link)}
               href={link.href}>
               {link.name}
-              {link.canActiveMenu ? <MdOutlineKeyboardArrowDown className={'ml-2'}/> : null}
+              {link.menu ? <MdOutlineKeyboardArrowDown className={'ml-2'}/> : null}
             </Link>
           ))}
         </nav>
         <div className={'header-search'}>
         </div>
       </div>
-      <div hidden={!isHover} className={'mega-menu'}>
-        <div className={'content'}>
-          <h1 className={'title'}>Менюшка</h1>
-        </div>
+      <div hidden={!isHover}>
+        <MegaMenu href={href} info={infoMegaMenu}/>
       </div>
     </header>
   )

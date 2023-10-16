@@ -23,7 +23,6 @@ export const Calendar = (): JSX.Element => {
   let date = new Date()
   let day = date.getDate()
   let dayIndex = date.getDay() - 1
-  console.log(date.toLocaleString())
 
   return (
     <div className={'container mx-auto'}>

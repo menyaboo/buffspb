@@ -1,5 +1,6 @@
 import '../public/css/globals.scss'
 import type { Metadata } from 'next'
+import {TheInfo} from "@/app/_components/TheInfo";
 
 export const metadata: Metadata = {
   title: 'Буфф',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <TheInfo/>
+      </body>
     </html>
   )
 }

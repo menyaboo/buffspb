@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {OnePoster} from "@/app/_components/Home/Poster/OnePoster";
+import {OnePoster} from "@/app/_components/Home/Posters/OnePoster";
 import {Poster} from "@/app/_types/poster";
 import {getAllPosters} from "@/app/_services/getPosters";
 import {Scene} from "@/app/_types/scene";

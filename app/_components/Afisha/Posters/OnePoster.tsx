@@ -2,7 +2,8 @@ import Link from "next/link";
 import {Poster} from "@/app/_types/poster";
 import {Scene} from "@/app/_types/scene";
 import Image from "next/image";
-import {posters} from "@/app/api/posters/posters";
+import pushkinCard from '@/public/img/Пушкинская-карта.png'
+import {prefix} from "@/app/global";
 
 function getDate(date: Date): string | undefined {
   const data = new Date(date)
@@ -32,20 +33,20 @@ export const OnePoster = ({poster, scenes}: Props):JSX.Element => {
         <span className={'time'}>{getTime(poster.date, scenes[--poster.sceneId].name)}</span>
       </div>
       <div className={'poster-info'}>
-        <Link href={'/'} style={{backgroundImage: `url(${process.env.HOST_NAME}/img/posters/${poster.photo})`}} className={'poster-img'}></Link>
+        <Link href={`/afisha/${poster.id}`} style={{backgroundImage: `url(${prefix}/img/posters/${poster.photo})`}} className={'poster-img'}></Link>
         <div className={'info'}>
           <div className={'info-description'}>
-            <Link href={'/'}><h1 className={'title-second'}>{poster.title}</h1></Link>
+            <Link href={`/afisha/${poster.id}`}><h1 className={'title-second'}>{poster.title}</h1></Link>
             <p className={'foreground-second'}>{poster.author}</p>
           </div>
           <div className={'poster-buttons'}>
-            <Link className={'btn-accent'} href={'/'}>Купить билет</Link>
-            <Link className={'btn-accent'} href={'/'}>Подробнее</Link>
+            <Link className={'btn-accent'} href={`/afisha/${poster.id}`}>Купить билет</Link>
+            <Link className={'btn-accent'} href={`/afisha/${poster.id}`}>Подробнее</Link>
           </div>
           {
             poster.isPushkinCard ?
               <div className={'pushkin-card'}>
-                <Image width={180} height={150} src={'/img/Пушкинская-карта.png'} alt={'pushkin-card'}/>
+                <Image width={180} height={150} src={pushkinCard} alt={'pushkin-card'}/>
               </div> : null
           }
         </div>

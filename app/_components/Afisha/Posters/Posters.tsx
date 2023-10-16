@@ -1,4 +1,4 @@
-import {OnePoster} from "@/app/_components/Afisha/Poster/OnePoster";
+import {OnePoster} from "@/app/_components/Afisha/Posters/OnePoster";
 import {Poster} from "@/app/_types/poster";
 import {getAllPosters} from "@/app/_services/getPosters";
 import {Scene} from "@/app/_types/scene";

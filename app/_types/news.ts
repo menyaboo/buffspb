@@ -4,4 +4,5 @@ export interface News {
   name: string,
   description: string,
   date: Date,
+  title?: string
 }

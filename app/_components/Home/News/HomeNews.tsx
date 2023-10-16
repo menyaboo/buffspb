@@ -14,7 +14,7 @@ export const HomeNews = async (): Promise<JSX.Element> => {
       <div className={'name-section'}>
         <h1 className={'title'}>Новости</h1>
         <div style={{fontStyle: "italic"}} className={'links'}>
-          <Link className={'flex link-arrow'} href={"/"}>
+          <Link className={'flex link-arrow'} href={"/news"}>
             ВСЕ НОВОСТИ <BsArrowRight className={'arrow-right anim-ml'}/>
           </Link>
         </div>

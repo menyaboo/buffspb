@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import {Autoplay, FreeMode} from 'swiper/modules';
 import {News} from "@/app/_types/news";
+import {prefix} from "@/app/global";
 
 type Props = {
   news: Array<News>
@@ -32,7 +33,7 @@ export const Slider =  ({news}: Props):JSX.Element => {
       {news.map((news) =>
         <SwiperSlide style={{cursor: "pointer"}} key={news.id}>
           <div className={'slider-item'}>
-            <div className={'item-img'} style={{background: `url(${process.env.HOST_NAME}/img/posters/${news.photo}) center center no-repeat`}}></div>
+            <div className={'item-img'} style={{background: `url(${prefix}/img/posters/${news.photo}) center center no-repeat`}}></div>
             <p className={'date'}>{getDate(news.date)}</p>
             <h1 className={'name'}>{news.name}</h1>
             <p className={'description'}>{news.description}</p>

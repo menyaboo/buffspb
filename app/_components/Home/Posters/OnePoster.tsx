@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {Poster} from "@/app/_types/poster";
 import {Scene} from "@/app/_types/scene";
+import {prefix} from "@/app/global";
 
 function getDate(date: Date): string | undefined {
   const data = new Date(date)
@@ -27,7 +28,7 @@ export const OnePoster = ({poster, scenes}: Props):JSX.Element => {
     <div  className={`poster-card xl`}>
       <div className={'poster-card_wrapper'}>
         <div className={'poster-img'}
-             style={{background: `url(${process.env.HOST_NAME}/img/posters/${poster.photo}) center center no-repeat`}}>
+             style={{background: `url(${prefix}/img/posters/${poster.photo}) center center no-repeat`}}>
         </div>
         <div className={'poster-info'}>
           <div className={'poster-info_date'}>
@@ -38,7 +39,7 @@ export const OnePoster = ({poster, scenes}: Props):JSX.Element => {
             <h1 className={'name'}>{poster.title}</h1>
             <p className={'author'}>{poster.author}</p>
           </div>
-          <Link href={'/'} className={'btn-accent'}>
+          <Link href={`/afisha/${poster.id}`} className={'btn-accent'}>
             Посмотреть
           </Link>
         </div>

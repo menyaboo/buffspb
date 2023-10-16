@@ -2,5 +2,5 @@ export interface NavLink {
   id: number,
   name: string,
   href: string,
-  canActiveMenu: boolean,
+  menu?: string,
 }

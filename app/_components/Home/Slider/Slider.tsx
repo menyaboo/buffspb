@@ -5,13 +5,13 @@ import 'swiper/css/scrollbar';
 import {Scrollbar, Autoplay} from 'swiper/modules';
 import {Poster} from "@/app/_types/poster";
 import Link from "next/link";
+import {prefix} from "@/app/global";
 
 type Props = {
   posters: Array<Poster>
 }
 
 export const Slider =  ({posters}: Props):JSX.Element => {
-
   return (
     <Swiper
       scrollbar={{
@@ -29,7 +29,7 @@ export const Slider =  ({posters}: Props):JSX.Element => {
       {posters.map((poster: Poster) => (
         <SwiperSlide className={'swiper-slide'} key={poster.id}>
           <div className={'slide'}
-               style={{background: `url(${process.env.HOST_NAME}/img/posters/${poster.photo}) top no-repeat`, backgroundSize: "cover"}}>
+               style={{backgroundImage: `url('${prefix}/img/posters/${poster.photo}')`}}>
             <div className={'slide-wrapper'}>
               <div className={'container mx-auto slide-body'}>
                 <div className={'info'}>
