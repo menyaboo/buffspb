@@ -12,14 +12,6 @@ interface Params {
   }
 }
 
-export async function getStaticPaths() {
-  const posters: Array<Poster> = await getAllPosters()
-
-  return posters.map((poster) => ({
-    slug: poster.id.toString(),
-  }))
-}
-
 export default async function PageAfisha({params: {id}}: Params):Promise<JSX.Element> {
   const poster: Poster = await getOnePoster(+id)
   const scenes: Array<Scene> = await getAllScenes()

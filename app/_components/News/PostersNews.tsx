@@ -1,12 +1,10 @@
 import {getAllNews} from "@/app/_services/getNews";
 import {OneNews} from "@/app/_components/News/OneNews";
-// @ts-ignore
 import {News} from "@/app/_types/news";
 
 export const revalidate = 10
 
-// @ts-ignore
-export const News = async ():Promise<JSX.Element> => {
+export const PostersNews = async ():Promise<JSX.Element> => {
   const news:Array<News> = await getAllNews()
 
   return (
