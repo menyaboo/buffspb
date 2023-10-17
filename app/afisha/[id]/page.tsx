@@ -1,5 +1,5 @@
 import {Poster} from "@/app/_types/poster";
-import {getOnePoster} from "@/app/_services/getPosters";
+import {getAllPosters, getOnePoster} from "@/app/_services/getPosters";
 import {TheHeader} from "@/app/_components/TheNavbar/TheHeader";
 import {TheFooter} from "@/app/_components/TheFooter";
 import {OnePoster} from "@/app/_components/Afisha/[id]/OnePoster";
@@ -10,6 +10,14 @@ interface Params {
   params: {
     id: string
   }
+}
+
+export async function getStaticPaths() {
+  const posters: Array<Poster> = await getAllPosters()
+
+  return posters.map((poster) => ({
+    slug: poster.id.toString(),
+  }))
 }
 
 export default async function PageAfisha({params: {id}}: Params):Promise<JSX.Element> {
