@@ -4,7 +4,6 @@ const nextConfig = {
     HOST_NAME: 'https://menyaboo.github.io/buffspb/',
     //HOST_NAME: 'http://localhost:3000',
   },
-  railingSlash: true,
   output: 'export',
 }
 

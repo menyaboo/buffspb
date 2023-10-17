@@ -3,6 +3,12 @@ import {posters} from "../posters";
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const id = params.id
-  const poster = posters[+id - 1]
-  return NextResponse.json(poster);
+  let result = posters[0]
+
+  for (let i= 0; i < posters.length; i++) {
+    console.log(posters[i])
+    if (+id === posters[i].id) {
+      return NextResponse.json( result = posters[i]);
+    }
+  }
 }
