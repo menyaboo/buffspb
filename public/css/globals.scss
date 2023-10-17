@@ -130,10 +130,6 @@ body {
     height: var(--margin-nav);
   }
 
-  .navbar-item {
-
-  }
-
   .header {
     z-index: 99;
     position: fixed;
@@ -168,8 +164,6 @@ body {
     animation: .5s show;
 
     .links {
-      width: auto;
-
       a {
         padding: 15px 0 0 0;
         margin: 0;
@@ -192,8 +186,8 @@ body {
     .menu {
       display: flex;
       flex-direction: column;
-      justify-content: start;
-      align-items: start;
+      justify-content: flex-start;
+      align-items: flex-start;
       width: 400px;
       padding-right: 25px;
       height: 80%;

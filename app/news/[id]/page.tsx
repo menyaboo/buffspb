@@ -10,7 +10,7 @@ interface Params {
   }
 }
 
-export default async function Page({params: {id}}: Params):Promise<JSX.Element> {
+export default async function DynamicPageNews({params: {id}}: Params):Promise<JSX.Element> {
   const news: News = await getOneNews(+id)
 
   return (

@@ -1,5 +1,5 @@
 import {Poster} from "@/app/_types/poster";
-import {getAllPosters, getOnePoster} from "@/app/_services/getPosters";
+import {getOnePoster} from "@/app/_services/getPosters";
 import {TheHeader} from "@/app/_components/TheNavbar/TheHeader";
 import {TheFooter} from "@/app/_components/TheFooter";
 import {OnePoster} from "@/app/_components/Afisha/[id]/OnePoster";
@@ -12,7 +12,7 @@ interface Params {
   }
 }
 
-export default async function PageAfisha({params: {id}}: Params):Promise<JSX.Element> {
+export default async function DynamicPageAfisha({params: {id}}: Params):Promise<JSX.Element> {
   const poster: Poster = await getOnePoster(+id)
   const scenes: Array<Scene> = await getAllScenes()
 
