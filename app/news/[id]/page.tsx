@@ -11,12 +11,12 @@ interface Params {
 }
 
 export default async function PageNews({params: {id}}: Params):Promise<JSX.Element> {
-  const news: News = await getOneNews(+id)
+  //const news: News = await getOneNews(+id)
 
   return (
     <main>
       <TheHeader/>
-      <OneNews news={news}/>
+
       <TheFooter/>
     </main>
   )
