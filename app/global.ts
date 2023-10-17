@@ -1,1 +1,1 @@
-export const prefix: string = 'buffspb'
+export const prefix: string = ''
