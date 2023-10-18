@@ -6,7 +6,6 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   let result = news[0]
 
   for (let i= 0; i < news.length; i++) {
-    console.log(news[i])
     if (+id === news[i].id) {
       return NextResponse.json( result = news[i]);
     }

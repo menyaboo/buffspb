@@ -13,7 +13,6 @@ type Props = {
 
 export const OneNews = ({news}: Props):JSX.Element => {
 
-
   return (
     <div className={'card'}>
       <div className={'card-body'}>

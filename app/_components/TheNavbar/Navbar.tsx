@@ -7,16 +7,21 @@ import {NavLink} from "@/app/_types/navLink";
 import {MdOutlineKeyboardArrowDown} from "react-icons/md";
 import {News} from "@/app/_types/news";
 import {MegaMenu} from "@/app/_components/TheNavbar/MegaMenu";
+import {Role} from "@/app/_types/role";
+import {TheaterPeople} from "@/app/_types/theaterPeople";
+import {Poster} from "@/app/_types/poster";
 
 type Props = {
   navLinks: Array<NavLink>
   news: Array<News>
-  posters: Array<News>
+  posters: Array<Poster>
+  role: Array<Role>
+  people: Array<TheaterPeople>
 }
 
-export const Navbar = ({navLinks, news, posters}: Props): JSX.Element => {
-  const [isHover, setIsHover] = useState(false);
-  const [infoMegaMenu, setInfoMegaMenu] = useState(news)
+export const Navbar = ({navLinks, news, posters, role, people}: Props): JSX.Element => {
+  const [isHover, setIsHover] = useState(false)
+  const [infoMegaMenu, setInfoMegaMenu] = useState<Array<News> | Array<Poster> | Array<TheaterPeople>>(news)
   const [href, setHref] = useState('')
   const mouseEnter = (link: NavLink) => {
     if (!link.menu)
@@ -30,6 +35,10 @@ export const Navbar = ({navLinks, news, posters}: Props): JSX.Element => {
       case 'posters':
         setInfoMegaMenu(posters)
         setHref('afisha')
+        break
+      case 'theater-people':
+        setInfoMegaMenu(people)
+        setHref('theater-people')
         break
       default:
         mouseLeave()
@@ -62,7 +71,7 @@ export const Navbar = ({navLinks, news, posters}: Props): JSX.Element => {
         </div>
       </div>
       <div hidden={!isHover}>
-        <MegaMenu href={href} info={infoMegaMenu}/>
+        <MegaMenu role={role} href={href} info={infoMegaMenu}/>
       </div>
     </header>
   )

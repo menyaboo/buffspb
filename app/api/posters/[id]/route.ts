@@ -6,7 +6,6 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   let result = posters[0]
 
   for (let i= 0; i < posters.length; i++) {
-    console.log(posters[i])
     if (+id === posters[i].id) {
       return NextResponse.json( result = posters[i]);
     }
