@@ -5,16 +5,14 @@ import {HomeNews} from "@/app/_components/Home/News/HomeNews";
 import {TheFooter} from "@/app/_components/TheFooter";
 import {TheInfo} from "@/app/_components/TheInfo";
 
-//      <TheHeader/>
-//       <HomeSlider/>
-//       <HomePoster/>
-//       <HomeNews/>
-//       <TheFooter/>
-
 export default function Home(): JSX.Element {
   return (
     <main>
-      
+      <TheHeader/>
+      <HomeSlider/>
+      <HomePoster/>
+      <HomeNews/>
+      <TheFooter/>
     </main>
   )
 }
