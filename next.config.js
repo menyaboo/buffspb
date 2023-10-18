@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    //HOST_NAME: 'https://buffspb-nm7kxz1pz-menyaboos-projects.vercel.app/',
-    HOST_NAME: 'http://localhost:3000',
+    HOST_NAME: 'https://buffspb-1aq46coeq-menyaboos-projects.vercel.app/',
+    //HOST_NAME: 'http://localhost:3000',
   },
 }
 
