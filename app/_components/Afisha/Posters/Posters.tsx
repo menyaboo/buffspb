@@ -16,7 +16,7 @@ export const Posters = async ():Promise<JSX.Element> => {
         <h1 className={'title'}>Афиша</h1>
       </div>
       <div className={'posters'}>
-        {posters.map((poster: Poster) => (<OnePoster key={poster.id} poster={poster} scenes={scenes}/>))}
+        {posters?.map((poster: Poster) => (<OnePoster key={poster.id} poster={poster} scenes={scenes}/>))}
       </div>
     </div>
   )

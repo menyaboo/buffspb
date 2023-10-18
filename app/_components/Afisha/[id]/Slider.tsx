@@ -31,7 +31,7 @@ export const Slider =  ():JSX.Element => {
       }}
       speed={800}
     >
-      {images.map((image:string, index:number) => (
+      {images?.map((image:string, index:number) => (
         <SwiperSlide key={index} className={'slide'}>
           <div className={'picture'} style={{backgroundImage: `url(${prefix}/img/posters/${image})`}}></div>
         </SwiperSlide>

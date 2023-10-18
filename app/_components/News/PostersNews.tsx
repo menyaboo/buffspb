@@ -13,7 +13,7 @@ export const PostersNews = async ():Promise<JSX.Element> => {
         <h1 className={'title'}>Новости</h1>
       </div>
       <div className={'news-cards'}>
-        {news.map((el) => (
+        {news?.map((el) => (
           <OneNews key={el.id} news={el}/>
         ))}
       </div>

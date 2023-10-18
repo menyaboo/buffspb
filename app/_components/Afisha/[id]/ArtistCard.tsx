@@ -26,7 +26,7 @@ export const ArtistCard = ():JSX.Element => {
         <SlArrowDown className={'ml-4 mt-1'}/>
       </div>
       <div hidden={isShow} className={'mt-3 foreground-second'}>
-        {peoples.map((people, index: number) => (
+        {peoples?.map((people, index: number) => (
           <div key={index} className={'flex justify-between'}>
             <p>{people.prof}</p>
             <p>{people.people}</p>

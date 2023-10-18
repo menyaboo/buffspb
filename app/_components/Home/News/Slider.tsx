@@ -30,7 +30,7 @@ export const Slider =  ({news}: Props):JSX.Element => {
       speed={1000}
       className="slider"
     >
-      {news.map((news) =>
+      {news?.map((news) =>
         <SwiperSlide style={{cursor: "pointer"}} key={news.id}>
           <div className={'slider-item'}>
             <div className={'item-img'} style={{background: `url(${prefix}/img/posters/${news.photo}) center center no-repeat`}}></div>

@@ -26,7 +26,7 @@ export const Slider =  ({posters}: Props):JSX.Element => {
       }}
       speed={800}
     >
-      {posters.map((poster: Poster) => (
+      {posters?.map((poster: Poster) => (
         <SwiperSlide className={'swiper-slide'} key={poster.id}>
           <div className={'slide'}
                style={{backgroundImage: `url('${prefix}/img/posters/${poster.photo}')`}}>

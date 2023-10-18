@@ -56,7 +56,7 @@ export const Navbar = ({navLinks, news, posters, role, people}: Props): JSX.Elem
           <Link href={'/'}><Image alt={"logo"} src={Logo}/></Link>
         </div>
         <nav className={'navbar links'}>
-          {navLinks.map((link: NavLink) => (
+          {navLinks?.map((link: NavLink) => (
             <Link
               className={'flex items-center'}
               key={link.id}
